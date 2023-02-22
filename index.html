@@ -6,11 +6,6 @@
     <script src="script.js"></script>
     <script defer src="https://unpkg.com/p5.collide2d"></script>
 
-    <div class="person"></div>
-    <div class="aBlock"></div>
-    <div class="bBlock"></div>
-    <div class="cBlock"></div>
-
     <script>
       let w = window.innerWidth;
       let h = window.innerHeight;
@@ -18,10 +13,6 @@
       var blockA = new blockA();
       var blockB = new blockB();
       var blockC = new blockC();
-      document.getElementsByClassName("person") = player;
-      document.getElementsByClassName("aBlock") = blockA;
-      document.getElementsByClassName("bBlock") = blockB;
-      document.getElementsByClassName("cBlock") = blockC;
 
       function setup() {
         createCanvas(w, h);
