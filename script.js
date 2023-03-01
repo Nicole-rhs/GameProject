@@ -7,7 +7,6 @@ function player(){
     
     this.show = function(){
         ellipse(this.x,this.y,50);
-        ellipseMode(CENTER);
         fill(222,0,0);
     }
     this.up = function(){
@@ -50,7 +49,6 @@ function blockA(){
 
     this.show = function(){
         rect(this.x, this.y, this.l, this.w);
-        rectMode(CENTER);
         fill(222,0,0);
         this.x = this.x -= 5.5;
         if (this.x <= 0){
@@ -70,7 +68,6 @@ function blockB(){
 
     this.show = function(){
         rect(this.x, this.y, this.l, this.w);
-        rectMode(CENTER);
         fill(222,0,0);
         this.x = this.x -= 5.3;
         if (this.x <= 0){
@@ -90,7 +87,6 @@ function blockC(){
 
     this.show = function(){
         rect(this.x, this.y, this.l, this.w);
-        rectMode(CENTER);
         fill(0,222,0);
         this.x = this.x -= 5;
         if (this.x <= 0){
