@@ -35,28 +35,28 @@
         touchB = collideRectRect(player.x, player.y, 50, 50, blockB.x, blockB.y, blockB.l, blockB.w);
         touchC = collideRectRect(player.x, player.y, 50, 50, blockC.x, blockC.y, blockC.l, blockC.w);
         if (touchA === true) {
-          player.x = blockA.x + 10;
-          player.y = blockA.y + 10;
+          player.x >= blockA.x;
+          player.y = blockA.y;
           touchA = false;
         }
         if (touchB === true) {
-          player.x = blockB.x + 10;
-          player.y = blockB.y + 10;
+          player.x >= blockB.x;
+          player.y = blockB.y;
           touchB = false;
         }
         if (touchC === true) {
-          player.x = blockC.x + 10;
-          player.y = blockC.y + 10;
+          player.x >= blockC.x;
+          player.y = blockC.y;
           touchC = false;
         }
       }
 
       function keyPressed(){
-        //To jump
+        //To jump (up arrow)
         if (keyCode === UP_ARROW){
           player.up();
         }
-        //To pause/unpause screen
+        //To pause/unpause screen (space bar)
         if (keyCode === 32) {
           if(isLooping()){
             noLoop();
