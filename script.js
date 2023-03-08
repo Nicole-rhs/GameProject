@@ -58,7 +58,7 @@ function blockA(){
             this.l = random(30,200);
             this.w = random(30,100);
             this.x = w + 50;
-            this.y = random(20,h-10);
+            this.y = random(10,h-10);
         }
     }
 }
@@ -80,7 +80,7 @@ function blockB(){
             this.l = random(30,200);
             this.w = random(30,100);
             this.x = w + random(20,70);
-            this.y = random(50,h-30);
+            this.y = random(20,h/2);
         }
     }
 }
