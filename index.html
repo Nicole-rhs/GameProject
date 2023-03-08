@@ -6,25 +6,44 @@
     <script src="script.js"></script>
     <script defer src="https://unpkg.com/p5.collide2d"></script>
 
+    <span id="score"></span>
+
+    <style>
+      #score {
+        position: absolute;
+        top: 5%;
+        left: 90%;
+        font-size: 30px;
+      }
+    </style>
+
     <script>
       let w = window.innerWidth;
       let h = window.innerHeight;
+      let touchA = false;
+      let touchB = false;
+      let touchC = false;
+      let touchD = false;
+      let touchE = false;
+
       var player = new player();
       var blockA = new blockA();
       var blockB = new blockB();
       var blockC = new blockC();
-      let touchA = false;
-      let touchB = false;
-      let touchC = false;
+      var pointA = new pointA();
+      var blockD = new blockD();
+      var blockE = new blockE();
 
       function setup() {
         createCanvas(w, h);
       }
 
       function draw() {
+        //To move left (left arrow)
         if (keyIsDown(LEFT_ARROW)) {
           player.left();
         }
+        //To move right (right arrow)
         if (keyIsDown(RIGHT_ARROW)) {
           player.right();
         }
@@ -32,25 +51,41 @@
         blockA.show();
         blockB.show();
         blockC.show();
+        blockD.show();
+        blockE.show();
+        pointA.show();
         player.show();
         player.update();
         touchA = collideRectRect(player.x, player.y, 50, 50, blockA.x, blockA.y, blockA.l, blockA.w);
         touchB = collideRectRect(player.x, player.y, 50, 50, blockB.x, blockB.y, blockB.l, blockB.w);
         touchC = collideRectRect(player.x, player.y, 50, 50, blockC.x, blockC.y, blockC.l, blockC.w);
+        touchD = collideRectRect(player.x, player.y, 50, 50, blockD.x, blockD.y, blockD.l, blockD.w);
+        touchE = collideRectRect(player.x, player.y, 50, 50, blockE.x, blockE.y, blockE.l, blockE.w);
+
         if (touchA === true) {
-          player.x >= blockA.x;
+          player.x = blockA.x;
           player.y = blockA.y;
           touchA = false;
         }
         if (touchB === true) {
-          player.x >= blockB.x;
+          player.x = blockB.x;
           player.y = blockB.y;
           touchB = false;
         }
         if (touchC === true) {
-          player.x >= blockC.x;
+          player.x = blockC.x;
           player.y = blockC.y;
           touchC = false;
+        }
+        if (touchD === true) {
+          player.x = blockD.x;
+          player.y = blockD.y;
+          touchD = false;
+        }
+        if (touchE === true) {
+          player.x = blockE.x;
+          player.y = blockE.y;
+          touchE = false;
         }
       }
 
