@@ -11,7 +11,6 @@ function player(){
         fill(222,0,0);
     }
     this.up = function(){
-        //Change origional velocity by opposing gravity
         this.velocity += this.lift;
     }
     this.left = function(){
@@ -23,8 +22,8 @@ function player(){
     this.update = function(){
         this.velocity += this.gravity;
         this.y += this.velocity;
-        //Air resistance
         this.velocity *= 0.92;
+
         //Stop jumper from leaving screen
         if (this.x <= 0){
             this.x = 0;
@@ -160,7 +159,9 @@ function pointA(){
         rect(this.x, this.y, 10, 10)
         rectMode(CENTER);
         fill(0,0,222);
+        //Movement speed
         this.x = this.x -= 3.3;
+        //To get new, random location
         if (this.x <= 0){
             this.x = w + random(w,2*w + 100);
             this.y = random(0,h-30);

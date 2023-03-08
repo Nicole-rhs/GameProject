@@ -20,19 +20,24 @@
     <script>
       let w = window.innerWidth;
       let h = window.innerHeight;
+
+      //Contact between player and blocks
       let touchA = false;
       let touchB = false;
       let touchC = false;
       let touchD = false;
       let touchE = false;
 
+      //Declare objects/variables
       var player = new player();
+
       var blockA = new blockA();
       var blockB = new blockB();
       var blockC = new blockC();
-      var pointA = new pointA();
       var blockD = new blockD();
       var blockE = new blockE();
+
+      var pointA = new pointA();
 
       function setup() {
         createCanvas(w, h);
@@ -47,21 +52,27 @@
         if (keyIsDown(RIGHT_ARROW)) {
           player.right();
         }
+
         clear();
         blockA.show();
         blockB.show();
         blockC.show();
         blockD.show();
         blockE.show();
+
         pointA.show();
+
         player.show();
         player.update();
+
+        //Contact between player and blocks
         touchA = collideRectRect(player.x, player.y, 50, 50, blockA.x, blockA.y, blockA.l, blockA.w);
         touchB = collideRectRect(player.x, player.y, 50, 50, blockB.x, blockB.y, blockB.l, blockB.w);
         touchC = collideRectRect(player.x, player.y, 50, 50, blockC.x, blockC.y, blockC.l, blockC.w);
         touchD = collideRectRect(player.x, player.y, 50, 50, blockD.x, blockD.y, blockD.l, blockD.w);
         touchE = collideRectRect(player.x, player.y, 50, 50, blockE.x, blockE.y, blockE.l, blockE.w);
 
+        //If contact is true
         if (touchA === true) {
           player.x = blockA.x;
           player.y = blockA.y;
