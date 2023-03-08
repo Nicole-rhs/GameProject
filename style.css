@@ -1,0 +1,13 @@
+#score {
+    position: absolute;
+    top: 5%;
+    left: 90%;
+    font-size: 30px;
+}
+
+#instructions{
+    position: absolute;
+    top: 3%;
+    left: 3%;
+    font-size: 15px;
+}
