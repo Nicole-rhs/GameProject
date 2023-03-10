@@ -101,7 +101,7 @@ function blockC(){
         if (this.x <= 0){
             this.l = random(30,200);
             this.w = random(30,100);
-            this.x = w + random(80,w/2);
+            this.x = w + random(w/3,w/2);
             this.y = random(h/2,h-20);
         }
     }
@@ -123,8 +123,8 @@ function blockD(){
         if (this.x <= 0){
             this.l = random(30,200);
             this.w = random(30,100);
-            this.x = w + random(80,w/2);
-            this.y = random(0,h-20);
+            this.x = w + random(30,w/2);
+            this.y = random(5,h-20);
         }
     }
 }
@@ -138,15 +138,59 @@ function blockE(){
     this.show = function(){
         rect(this.x, this.y, this.l, this.w);
         rectMode(CENTER);
-        fill(0,222,0);
+        fill(222,0,0);
+        //Movement speed
+        this.x = this.x -= 5;
+        //To get a new, random size and location
+        if (this.x <= 0){
+            this.l = random(30,200);
+            this.w = random(30,100);
+            this.x = w + random(w/2,w);
+            this.y = random(0,h-200);
+        }
+    }
+}
+
+function blockF(){
+    this.x = 7*w + 777;
+    this.y = h/2;
+    this.l = 60;
+    this.w = 20;
+
+    this.show = function(){
+        rect(this.x, this.y, this.l, this.w);
+        rectMode(CENTER);
+        fill(222,0,0);
         //Movement speed
         this.x = this.x -= 6.3;
         //To get a new, random size and location
         if (this.x <= 0){
             this.l = random(30,200);
             this.w = random(30,100);
-            this.x = w + random(80,w/2);
-            this.y = random(0,h-200);
+            this.x = w + random(10,100);
+            this.y = random(0,h/4);
+        }
+    }
+}
+
+function blockG(){
+    this.x = 10*w;
+    this.y = h/4;
+    this.l = 60;
+    this.w = 20;
+
+    this.show = function(){
+        rect(this.x, this.y, this.l, this.w);
+        rectMode(CENTER);
+        fill(0,0,222);
+        //Movement speed
+        this.x = this.x -= 6.5;
+        //To get a new, random size and location
+        if (this.x <= 0){
+            this.l = random(30,200);
+            this.w = random(30,100);
+            this.x = w + random(10,w/3);
+            this.y = random(h/2+h/4,h-20);
         }
     }
 }
@@ -156,15 +200,51 @@ function pointA(){
     this.y = 35;
 
     this.show = function(){
-        rect(this.x, this.y, 10, 10)
+        rect(this.x, this.y, 10, 10);
         rectMode(CENTER);
         fill(0,0,222);
         //Movement speed
         this.x = this.x -= 3.3;
         //To get new, random location
         if (this.x <= 0){
-            this.x = w + random(w,2*w + 100);
-            this.y = random(0,h-30);
+            this.x = w + random(w,2*w);
+            this.y = random(0,h-10);
+        }
+    }
+}
+
+function pointB(){
+    this.x = w + 333;
+    this.y = 135;
+
+    this.show = function(){
+        rect(this.x, this.y, 10, 10);
+        rectMode(CENTER);
+        fill(0,0,222);
+        //Movement speed
+        this.x = this.x -= 3.3;
+        //To get new, random location
+        if (this.x <= 0){
+            this.x = w + random(w,3*w);
+            this.y = random(0,h/2);
+        }
+    }
+}
+
+function pointC(){
+    this.x = w + 555;
+    this.y = h/2 + 100;
+
+    this.show = function(){
+        rect(this.x, this.y, 10, 10);
+        rectMode(CENTER);
+        fill(0,222,0);
+        //Movement speed
+        this.x = this.x -= 3.3;
+        //To get new, random location
+        if (this.x <= 0){
+            this.x = w + random(2*w, 3*w);
+            this.y = random(h/2,h-10);
         }
     }
 }

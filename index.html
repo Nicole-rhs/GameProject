@@ -7,16 +7,17 @@
     <script src="script.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
 
-    <span id="score"></span>
+    <span id="scoring"></span>
     <div id="instructions">
       Press p to pause/unpause
       <br>
-      Use arrow keys to move
+      Use arrows to move
     </div>
 
     <script>
       let w = window.innerWidth;
       let h = window.innerHeight;
+      let score = 0;
 
       //Contact between player and blocks
       let touchA = false;
@@ -24,6 +25,13 @@
       let touchC = false;
       let touchD = false;
       let touchE = false;
+      let touchF = false;
+      let touchG = false;
+
+      let getA = false;
+      let getB = false;
+      let getC = false;
+
 
       //Declare objects/variables
       var player = new player();
@@ -33,8 +41,13 @@
       var blockC = new blockC();
       var blockD = new blockD();
       var blockE = new blockE();
+      var blockF = new blockF();
+      var blockG = new blockG();
 
       var pointA = new pointA();
+      var pointB = new pointB();
+      var pointC = new pointC();
+
 
       function setup() {
         createCanvas(w, h);
@@ -49,25 +62,35 @@
         if (keyIsDown(RIGHT_ARROW)) {
           player.right();
         }
-
         clear();
+
         blockA.show();
         blockB.show();
         blockC.show();
         blockD.show();
         blockE.show();
+        blockF.show();
+        blockG.show();
 
         pointA.show();
+        pointB.show();
+        pointC.show();
 
         player.show();
         player.update();
-
+        
         //Contact between player and blocks
         touchA = collideRectRect(player.x, player.y, 50, 50, blockA.x, blockA.y, blockA.l, blockA.w);
         touchB = collideRectRect(player.x, player.y, 50, 50, blockB.x, blockB.y, blockB.l, blockB.w);
         touchC = collideRectRect(player.x, player.y, 50, 50, blockC.x, blockC.y, blockC.l, blockC.w);
         touchD = collideRectRect(player.x, player.y, 50, 50, blockD.x, blockD.y, blockD.l, blockD.w);
         touchE = collideRectRect(player.x, player.y, 50, 50, blockE.x, blockE.y, blockE.l, blockE.w);
+        touchF = collideRectRect(player.x, player.y, 50, 50, blockF.x, blockF.y, blockF.l, blockF.w);
+        touchG = collideRectRect(player.x, player.y, 50, 50, blockG.x, blockG.y, blockG.l, blockG.w);
+
+        getA = collideRectRect(player.x, player.y, 50, 50, pointA.x, pointA.y, 10, 10)
+        getB = collideRectRect(player.x, player.y, 50, 50, pointB.x, pointB.y, 10, 10)
+        getC = collideRectRect(player.x, player.y, 50, 50, pointC.x, pointC.y, 10, 10)
 
         //If contact is true
         if (touchA === true) {
@@ -94,6 +117,29 @@
           player.x = blockE.x;
           player.y = blockE.y;
           touchE = false;
+        }
+        if (touchF === true) {
+          player.x = blockF.x;
+          player.y = blockF.y
+          touchF = false;
+        }
+        if (touchG === true) {
+          player.x = blockG.x;
+          player.y = blockG.y;
+          touchG = false;
+        }
+
+        if (getA === true){
+          document.getElementById("scoring").innerHTML = score += 1;
+          getA = false;
+        }
+        if (getB === true){
+          document.getElementById("scoring").innerHTML = score += 2;
+          getB = false;
+        }
+        if (getC === true){
+          document.getElementById("scoring").innerHTML = score += 3;
+          getC = false;
         }
       }
 
