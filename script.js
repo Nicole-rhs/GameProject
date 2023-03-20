@@ -24,19 +24,19 @@ function player(){
         this.y += this.velocity;
         this.velocity *= 0.92;
 
-        //Stop jumper from leaving screen
-        if (this.x <= 0){
-            this.x = 0;
+        //How to die in the game
+        if (this.x <= -30){
+            noLoop();
         }
         if (this.x >= w){
             this.x = w;
         }
-        if (this.y <= 30){
-            this.y = 30;
+        if (this.y <= -33){
+            noLoop();
         }
-        if (this.y >= h + 55){
-            this.y = h+ 55;
+        if (this.y >= h + 30){
             this.velocity = 0;
+            noLoop();
         }
     }
 }
@@ -54,7 +54,7 @@ function blockA(){
         //Movement speed
         this.x = this.x -= 5.5;
         //To get a new, random size and location
-        if (this.x <= 0){
+        if (this.x <= -35){
             this.l = random(30,200);
             this.w = random(30,100);
             this.x = w + 50;
@@ -76,7 +76,7 @@ function blockB(){
         //Movement speed
         this.x = this.x -= 5.3;
         //To get a new, random size and location
-        if (this.x <= 0){
+        if (this.x <= -35){
             this.l = random(30,200);
             this.w = random(30,100);
             this.x = w + random(20,70);
@@ -98,7 +98,7 @@ function blockC(){
         //Movement speed
         this.x = this.x -= 5.7;
         //To get a new, random size and location
-        if (this.x <= 0){
+        if (this.x <= -35){
             this.l = random(30,200);
             this.w = random(30,100);
             this.x = w + random(w/3,w/2);
@@ -120,7 +120,7 @@ function blockD(){
         //Movement speed
         this.x = this.x -= 6;
         //To get a new, random size and location
-        if (this.x <= 0){
+        if (this.x <= -35){
             this.l = random(30,200);
             this.w = random(30,100);
             this.x = w + random(30,w/2);
@@ -142,7 +142,7 @@ function blockE(){
         //Movement speed
         this.x = this.x -= 5;
         //To get a new, random size and location
-        if (this.x <= 0){
+        if (this.x <= -35){
             this.l = random(30,200);
             this.w = random(30,100);
             this.x = w + random(w/2,w);
@@ -164,7 +164,7 @@ function blockF(){
         //Movement speed
         this.x = this.x -= 6.3;
         //To get a new, random size and location
-        if (this.x <= 0){
+        if (this.x <= -35){
             this.l = random(30,200);
             this.w = random(30,100);
             this.x = w + random(10,100);
@@ -186,7 +186,7 @@ function blockG(){
         //Movement speed
         this.x = this.x -= 6.5;
         //To get a new, random size and location
-        if (this.x <= 0){
+        if (this.x <= -35){
             this.l = random(30,200);
             this.w = random(30,100);
             this.x = w + random(10,w/3);
