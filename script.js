@@ -58,7 +58,7 @@ function blockA(){
             this.l = random(30,200);
             this.w = random(30,100);
             this.x = w + 50;
-            this.y = random(10,h-10);
+            this.y = random(h/4,h/2+h/4);
         }
     }
 }
@@ -222,7 +222,7 @@ function pointB(){
         rectMode(CENTER);
         fill(0,0,222);
         //Movement speed
-        this.x = this.x -= 3.3;
+        this.x = this.x -= 3.5;
         //To get new, random location
         if (this.x <= 0){
             this.x = w + random(w,3*w);
@@ -240,7 +240,7 @@ function pointC(){
         rectMode(CENTER);
         fill(0,222,0);
         //Movement speed
-        this.x = this.x -= 3.3;
+        this.x = this.x -= 3.5;
         //To get new, random location
         if (this.x <= 0){
             this.x = w + random(2*w, 3*w);
