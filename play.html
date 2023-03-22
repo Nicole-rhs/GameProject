@@ -1,0 +1,162 @@
+<html>
+  <head> </head>
+  <body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.5.0/p5.min.js" integrity="sha512-WJXVjqeINVpi5XXJ2jn0BSCfp0y80IKrYh731gLRnkAS9TKc5KNt/OfLtu+fCueqdWniouJ1ubM+VI/hbo7POQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.5.0/addons/p5.sound.min.js" integrity="sha512-WzkwpdWEMAY/W8WvP9KS2/VI6zkgejR4/KTxTl4qHx0utqeyVE0JY+S1DlMuxDChC7x0oXtk/ESji6a0lP/Tdg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script defer src="https://unpkg.com/p5.collide2d"></script>
+    <script src="script.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <span id="scoring"></span>
+    <div id="reminder">
+      Press p to pause/unpause
+      <br>
+      Use arrows to move
+    </div>
+
+    <script>
+      let w = window.innerWidth;
+      let h = window.innerHeight;
+      let score = 0;
+
+      //Contact between player and blocks
+      let touchA = false;
+      let touchB = false;
+      let touchC = false;
+      let touchD = false;
+      let touchE = false;
+      let touchF = false;
+      let touchG = false;
+
+      let getA = false;
+      let getB = false;
+      let getC = false;
+
+
+      //Declare objects/variables
+      var player = new player();
+
+      var blockA = new blockA();
+      var blockB = new blockB();
+      var blockC = new blockC();
+      var blockD = new blockD();
+      var blockE = new blockE();
+      var blockF = new blockF();
+      var blockG = new blockG();
+
+      var pointA = new pointA();
+      var pointB = new pointB();
+      var pointC = new pointC();
+
+
+      function setup() {
+        createCanvas(w, h);
+      }
+
+      function draw() {
+        //To move left (left arrow)
+        if (keyIsDown(LEFT_ARROW)) {
+          player.left();
+        }
+        //To move right (right arrow)
+        if (keyIsDown(RIGHT_ARROW)) {
+          player.right();
+        }
+        clear();
+
+        blockA.show();
+        blockB.show();
+        blockC.show();
+        blockD.show();
+        blockE.show();
+        blockF.show();
+        blockG.show();
+
+        pointA.show();
+        pointB.show();
+        pointC.show();
+
+        player.show();
+        player.update();
+        
+        //Contact between player and blocks
+        touchA = collideRectRect(player.x, player.y, 50, 50, blockA.x, blockA.y, blockA.l, blockA.w);
+        touchB = collideRectRect(player.x, player.y, 50, 50, blockB.x, blockB.y, blockB.l, blockB.w);
+        touchC = collideRectRect(player.x, player.y, 50, 50, blockC.x, blockC.y, blockC.l, blockC.w);
+        touchD = collideRectRect(player.x, player.y, 50, 50, blockD.x, blockD.y, blockD.l, blockD.w);
+        touchE = collideRectRect(player.x, player.y, 50, 50, blockE.x, blockE.y, blockE.l, blockE.w);
+        touchF = collideRectRect(player.x, player.y, 50, 50, blockF.x, blockF.y, blockF.l, blockF.w);
+        touchG = collideRectRect(player.x, player.y, 50, 50, blockG.x, blockG.y, blockG.l, blockG.w);
+
+        getA = collideRectRect(player.x, player.y, 50, 50, pointA.x, pointA.y, 10, 10)
+        getB = collideRectRect(player.x, player.y, 50, 50, pointB.x, pointB.y, 10, 10)
+        getC = collideRectRect(player.x, player.y, 50, 50, pointC.x, pointC.y, 10, 10)
+
+        //If contact is true
+        if (touchA === true) {
+          player.x = blockA.x;
+          player.y = blockA.y;
+          touchA = false;
+        }
+        if (touchB === true) {
+          player.x = blockB.x;
+          player.y = blockB.y;
+          touchB = false;
+        }
+        if (touchC === true) {
+          player.x = blockC.x;
+          player.y = blockC.y;
+          touchC = false;
+        }
+        if (touchD === true) {
+          player.x = blockD.x;
+          player.y = blockD.y;
+          touchD = false;
+        }
+        if (touchE === true) {
+          player.x = blockE.x;
+          player.y = blockE.y;
+          touchE = false;
+        }
+        if (touchF === true) {
+          player.x = blockF.x;
+          player.y = blockF.y
+          touchF = false;
+        }
+        if (touchG === true) {
+          player.x = blockG.x;
+          player.y = blockG.y;
+          touchG = false;
+        }
+
+        if (getA === true){
+          document.getElementById("scoring").innerHTML = score += 1;
+          getA = false;
+        }
+        if (getB === true){
+          document.getElementById("scoring").innerHTML = score += 2;
+          getB = false;
+        }
+        if (getC === true){
+          document.getElementById("scoring").innerHTML = score += 3;
+          getC = false;
+        }
+      }
+
+      function keyPressed(){
+        //To jump (up arrow)
+        if (keyCode === UP_ARROW){
+          player.up();
+        }
+        //To pause/unpause screen (p)
+        if (keyCode === 80) {
+          if(isLooping()){
+            noLoop();
+          } else {
+            loop();
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
