@@ -3,24 +3,27 @@
   <body>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.5.0/p5.min.js" integrity="sha512-WJXVjqeINVpi5XXJ2jn0BSCfp0y80IKrYh731gLRnkAS9TKc5KNt/OfLtu+fCueqdWniouJ1ubM+VI/hbo7POQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.5.0/addons/p5.sound.min.js" integrity="sha512-WzkwpdWEMAY/W8WvP9KS2/VI6zkgejR4/KTxTl4qHx0utqeyVE0JY+S1DlMuxDChC7x0oXtk/ESji6a0lP/Tdg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script defer src="https://unpkg.com/p5.collide2d"></script>
     <script src="script.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
 
     <h1 id="name"></h1>
+
+    <h3 id="goal"> Goal =</h3>
 
     <p id="instructions">
       How to play
       <br>
       Press p to pause/unpause
       <br>
-      Use arrow keys to move
+      Move using arrow keys
+      <br>
+      Do not leave screen
       <br>
       Avoid obstacles
       <br>
       Collect points
     </p>
     
-    <button id="start">Play</button>
+    <button id="start" onclick="start()">Start</button>
   </body>
 </html>
