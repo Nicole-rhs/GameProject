@@ -18,7 +18,7 @@
 
     <div id="end">
       <h3 id="message">You Died.</h3>
-      <h5 id="finalScore">0</h5>
+      <h5 id="finalScore">Score: 0</h5>
       <button id="replay" onclick="replay()">Replay</button>
     </div>
 
@@ -146,19 +146,19 @@
         if (getA === true){
           a = score += 1
           document.getElementById("scoring").innerHTML = a;
-          document.getElementById("finalScore").innerHTML = a;
+          document.getElementById("finalScore").innerHTML = "Score: " + a;
           getA = false;
         }
         if (getB === true){
           b = score += 2
           document.getElementById("scoring").innerHTML = b;
-          document.getElementById("finalScore").innerHTML = b;
+          document.getElementById("finalScore").innerHTML = "Score: " + b;
           getB = false;
         }
         if (getC === true){
           c = score += 3
           document.getElementById("scoring").innerHTML = c;
-          document.getElementById("finalScore").innerHTML = c;
+          document.getElementById("finalScore").innerHTML = "Score: " + c;
           getC = false;
         }
       }
