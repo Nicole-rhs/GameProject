@@ -1,9 +1,18 @@
+/*index.html*/
 #name{
     position: absolute;
-    top: 10%;
+    top: 5%;
     left: 25%;
-    height: 20%;
+    height: 10%;
     width: 50%;
+    text-align: center;
+}
+#goal{
+    position: absolute;
+    top: 15%;
+    left: 30%;
+    height: 5%;
+    width: 35%;
     text-align: center;
 }
 #instructions{
@@ -13,6 +22,7 @@
     height: 30%;
     width: 30%;
     text-align: center;
+    text-overflow: scroll;
 }
 #start{
     position: absolute;
@@ -22,6 +32,7 @@
     text-align: center;
 }
 
+/*play.html*/
 #scoring {
     position: absolute;
     top: 5%;
@@ -34,4 +45,13 @@
     top: 3%;
     left: 3%;
     font-size: 15px;
+}
+#end{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 30%;
+    width: 30%;
+    transform: translate(-50%,-50%);
+    text-align: center;
 }
