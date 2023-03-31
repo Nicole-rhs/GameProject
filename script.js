@@ -1,3 +1,9 @@
+//To go to play.html and start game
+function start(){
+    location.href = "play.html";
+}
+
+//Player
 function player(){
     this.x = w/2;
     this.y = 0;
@@ -26,21 +32,27 @@ function player(){
 
         //How to die in the game
         if (this.x <= -30){
+            this.x = -2*w;
             noLoop();
+            document.getElementById("end").style.display = "block";
         }
         if (this.x >= w){
             this.x = w;
         }
         if (this.y <= -33){
+            this.y = -2*h;
             noLoop();
+            document.getElementById("end").style.display = "block";
         }
         if (this.y >= h + 30){
-            this.velocity = 0;
+            this.y = 3*h;
             noLoop();
+            document.getElementById("end").style.display = "block";
         }
     }
 }
 
+//Obstacles * 7
 function blockA(){
     this.x = w + 20;
     this.y = h/2;
@@ -195,6 +207,7 @@ function blockG(){
     }
 }
 
+//Points * 3
 function pointA(){
     this.x = w + 45;
     this.y = 35;
@@ -247,4 +260,9 @@ function pointC(){
             this.y = random(h/2,h-10);
         }
     }
+}
+
+//To replay/reload
+function replay(){
+    location.reload();
 }

@@ -7,19 +7,30 @@
     <script src="script.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
 
-    <span id="scoring"></span>
+    <span id="scoring">0</span>
     <div id="reminder">
         Reminders
         <br>
         Press p to pause/unpause
         <br>
-        Use arrow keys to move
+        Move using arrow keys
+    </div>
+
+    <div id="end">
+      <h3 id="message">You Died.</h3>
+      <h5 id="finalScore">0</h5>
+      <button id="replay" onclick="replay()">Replay</button>
     </div>
 
     <script>
       let w = window.innerWidth;
       let h = window.innerHeight;
+
+      //Game scores
       let score = 0;
+      let a;
+      let b;
+      let c;
 
       //Contact between player and blocks
       let touchA = false;
@@ -53,6 +64,7 @@
 
       function setup() {
         createCanvas(w, h);
+        document.getElementById("end").style.display = "none";
       }
 
       function draw() {
@@ -132,15 +144,21 @@
         }
 
         if (getA === true){
-          document.getElementById("scoring").innerHTML = score += 1;
+          a = score += 1
+          document.getElementById("scoring").innerHTML = a;
+          document.getElementById("finalScore").innerHTML = a;
           getA = false;
         }
         if (getB === true){
-          document.getElementById("scoring").innerHTML = score += 2;
+          b = score += 2
+          document.getElementById("scoring").innerHTML = b;
+          document.getElementById("finalScore").innerHTML = b;
           getB = false;
         }
         if (getC === true){
-          document.getElementById("scoring").innerHTML = score += 3;
+          c = score += 3
+          document.getElementById("scoring").innerHTML = c;
+          document.getElementById("finalScore").innerHTML = c;
           getC = false;
         }
       }
