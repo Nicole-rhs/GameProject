@@ -12,7 +12,7 @@ function player(){
     this.velocity = 0;
     
     this.show = function(){
-        ellipse(this.x,this.y,50,50);
+        ellipse(this.x, this.y, 40, 70);
         ellipseMode(CENTER);
         fill(222,0,0);
     }
@@ -65,10 +65,8 @@ function blockA(){
         fill(222,0,0);
         //Movement speed
         this.x = this.x -= 5.5;
-        //To get a new, random size and location
+        //To get a new, random location
         if (this.x <= -35){
-            this.l = random(30,200);
-            this.w = random(30,100);
             this.x = w + 50;
             this.y = random(h/4,h/2+h/4);
         }
@@ -87,10 +85,8 @@ function blockB(){
         fill(222,0,0);
         //Movement speed
         this.x = this.x -= 5.3;
-        //To get a new, random size and location
+        //To get a new, random location
         if (this.x <= -35){
-            this.l = random(30,200);
-            this.w = random(30,100);
             this.x = w + random(20,70);
             this.y = random(20,h/2);
         }
@@ -109,10 +105,8 @@ function blockC(){
         fill(222,0,0);
         //Movement speed
         this.x = this.x -= 5.7;
-        //To get a new, random size and location
+        //To get a new, random location
         if (this.x <= -35){
-            this.l = random(30,200);
-            this.w = random(30,100);
             this.x = w + random(w/3,w/2);
             this.y = random(h/2,h-20);
         }
@@ -131,10 +125,8 @@ function blockD(){
         fill(222,0,0);
         //Movement speed
         this.x = this.x -= 6;
-        //To get a new, random size and location
+        //To get a new, random location
         if (this.x <= -35){
-            this.l = random(30,200);
-            this.w = random(30,100);
             this.x = w + random(30,w/2);
             this.y = random(5,h-20);
         }
@@ -153,10 +145,8 @@ function blockE(){
         fill(222,0,0);
         //Movement speed
         this.x = this.x -= 5;
-        //To get a new, random size and location
+        //To get a new, random location
         if (this.x <= -35){
-            this.l = random(30,200);
-            this.w = random(30,100);
             this.x = w + random(w/2,w);
             this.y = random(0,h-200);
         }
@@ -175,10 +165,8 @@ function blockF(){
         fill(222,0,0);
         //Movement speed
         this.x = this.x -= 6.3;
-        //To get a new, random size and location
+        //To get a new, random location
         if (this.x <= -35){
-            this.l = random(30,200);
-            this.w = random(30,100);
             this.x = w + random(10,100);
             this.y = random(0,h/4);
         }
@@ -197,10 +185,8 @@ function blockG(){
         fill(0,0,222);
         //Movement speed
         this.x = this.x -= 6.5;
-        //To get a new, random size and location
+        //To get a new, random location
         if (this.x <= -35){
-            this.l = random(30,200);
-            this.w = random(30,100);
             this.x = w + random(10,w/3);
             this.y = random(h/2+h/4,h-20);
         }
