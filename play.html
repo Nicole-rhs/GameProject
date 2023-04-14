@@ -35,6 +35,21 @@
       let b;
       let c;
 
+      //Images
+      let main;
+      
+      let first;
+      let second;
+      let third;
+      let fourth;
+      let fifth;
+      let sixth;
+      let seventh;
+
+      let one;
+      let two;
+      let three;
+
       //Contact between player and blocks
       let touchA = false;
       let touchB = false;
@@ -64,6 +79,21 @@
       var pointB = new pointB();
       var pointC = new pointC();
 
+      function preload(){
+        main = loadImage("game-images/astronaut.png");
+
+        first = loadImage("game-images/asteroid-dark.png");
+        second = loadImage("game-images/asteroid-diamond.png");
+        third = loadImage("game-images/asteroid-peach.png");
+        fourth = loadImage("game-images/asteroid-red.png");
+        fifth = loadImage("game-images/asteroid-regular.png");
+        sixth = loadImage("game-images/asteroid-round.png");
+        seventh = loadImage("game-images/asteroid-spots.png");
+
+        one = loadImage("game-images/food-apple.png");
+        two = loadImage("game-images/food-dessert.png");
+        three = loadImage("game-images/food-peach.png");
+      }
 
       function setup() {
         createCanvas(w, h);
@@ -95,19 +125,36 @@
 
         player.show();
         player.update();
+
+        //To load images onto blocks
+        imageMode(CENTER);
+
+        image(main, player.x, player.y, 40, 70);
+
+        image(first, blockA.x, blockA.y, blockA.l, blockA.w);
+        image(second, blockB.x, blockB.y, blockB.l, blockB.w);
+        image(third, blockC.x, blockC.y, blockC.l, blockC.w);
+        image(fourth, blockD.x, blockD.y, blockD.l, blockD.w);
+        image(fifth, blockE.x, blockE.y, blockE.l, blockE.w);
+        image(sixth, blockF.x, blockF.y, blockF.l, blockF.w);
+        image(seventh, blockG.x, blockG.y, blockG.l, blockG.w);
+
+        image(one, pointA.x, pointA.y, 16, 26);
+        image(two, pointB.x, pointB.y, 16, 26);
+        image(three, pointC.x, pointC.y, 16, 26);
         
         //Contact between player and blocks
-        touchA = collideRectRect(player.x, player.y, 50, 50, blockA.x, blockA.y, blockA.l, blockA.w);
-        touchB = collideRectRect(player.x, player.y, 50, 50, blockB.x, blockB.y, blockB.l, blockB.w);
-        touchC = collideRectRect(player.x, player.y, 50, 50, blockC.x, blockC.y, blockC.l, blockC.w);
-        touchD = collideRectRect(player.x, player.y, 50, 50, blockD.x, blockD.y, blockD.l, blockD.w);
-        touchE = collideRectRect(player.x, player.y, 50, 50, blockE.x, blockE.y, blockE.l, blockE.w);
-        touchF = collideRectRect(player.x, player.y, 50, 50, blockF.x, blockF.y, blockF.l, blockF.w);
-        touchG = collideRectRect(player.x, player.y, 50, 50, blockG.x, blockG.y, blockG.l, blockG.w);
+        touchA = collideRectRect(player.x, player.y, 40, 70, blockA.x, blockA.y, blockA.l, blockA.w);
+        touchB = collideRectRect(player.x, player.y, 40, 70, blockB.x, blockB.y, blockB.l, blockB.w);
+        touchC = collideRectRect(player.x, player.y, 40, 70, blockC.x, blockC.y, blockC.l, blockC.w);
+        touchD = collideRectRect(player.x, player.y, 40, 70, blockD.x, blockD.y, blockD.l, blockD.w);
+        touchE = collideRectRect(player.x, player.y, 40, 70, blockE.x, blockE.y, blockE.l, blockE.w);
+        touchF = collideRectRect(player.x, player.y, 40, 70, blockF.x, blockF.y, blockF.l, blockF.w);
+        touchG = collideRectRect(player.x, player.y, 40, 70, blockG.x, blockG.y, blockG.l, blockG.w);
 
-        getA = collideRectRect(player.x, player.y, 50, 50, pointA.x, pointA.y, 10, 10)
-        getB = collideRectRect(player.x, player.y, 50, 50, pointB.x, pointB.y, 10, 10)
-        getC = collideRectRect(player.x, player.y, 50, 50, pointC.x, pointC.y, 10, 10)
+        getA = collideRectRect(player.x, player.y, 40, 70, pointA.x, pointA.y, 16, 26);
+        getB = collideRectRect(player.x, player.y, 40, 70, pointB.x, pointB.y, 16, 26);
+        getC = collideRectRect(player.x, player.y, 40, 70, pointC.x, pointC.y, 16, 26);
 
         //If contact is true
         if (touchA === true) {
