@@ -25,6 +25,10 @@
       <button id="replay" onclick="replay()">Replay</button>
     </div>
 
+    <div id="stop">
+      <h3>Paused</h3>
+    </div>
+
     <script>
       let w = window.innerWidth;
       let h = window.innerHeight;
@@ -97,6 +101,7 @@
 
       function setup() {
         createCanvas(w, h);
+        document.getElementById("stop").style.display = "none";
         document.getElementById("end").style.display = "none";
       }
 
@@ -221,8 +226,10 @@
         //To pause/unpause screen (p)
         if (keyCode === 80) {
           if(isLooping()){
+            document.getElementById("stop").style.display = "block";
             noLoop();
           } else {
+            document.getElementById("stop").style.display = "none";
             loop();
           }
         }
