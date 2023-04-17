@@ -56,8 +56,8 @@ function player(){
 function blockA(){
     this.x = w + 20;
     this.y = h/2;
-    this.l = 50;
-    this.w = 50;
+    this.l = 160;
+    this.w = 183;
 
     this.show = function(){
         rect(this.x, this.y, this.l, this.w);
@@ -76,8 +76,8 @@ function blockA(){
 function blockB(){
     this.x = w + 111;
     this.y = h/2 - 90;
-    this.l = 80;
-    this.w = 50;
+    this.l = 70;
+    this.w = 63;
 
     this.show = function(){
         rect(this.x, this.y, this.l, this.w);
@@ -96,8 +96,8 @@ function blockB(){
 function blockC(){
     this.x = 2*w + 222;
     this.y = h/2 - 123;
-    this.l = 60;
-    this.w = 20;
+    this.l = 111;
+    this.w = 80;
 
     this.show = function(){
         rect(this.x, this.y, this.l, this.w);
@@ -116,8 +116,8 @@ function blockC(){
 function blockD(){
     this.x = 3*w + 333;
     this.y = h/2 - 200;
-    this.l = 60;
-    this.w = 20;
+    this.l = 150;
+    this.w = 150;
 
     this.show = function(){
         rect(this.x, this.y, this.l, this.w);
@@ -136,8 +136,8 @@ function blockD(){
 function blockE(){
     this.x = 5*w + 555;
     this.y = h/2 + 123;
-    this.l = 60;
-    this.w = 20;
+    this.l = 185;
+    this.w = 180;
 
     this.show = function(){
         rect(this.x, this.y, this.l, this.w);
@@ -156,8 +156,8 @@ function blockE(){
 function blockF(){
     this.x = 7*w + 777;
     this.y = h/2;
-    this.l = 60;
-    this.w = 20;
+    this.l = 150;
+    this.w = 150;
 
     this.show = function(){
         rect(this.x, this.y, this.l, this.w);
@@ -176,8 +176,8 @@ function blockF(){
 function blockG(){
     this.x = 10*w;
     this.y = h/4;
-    this.l = 60;
-    this.w = 20;
+    this.l = 200;
+    this.w = 200;
 
     this.show = function(){
         rect(this.x, this.y, this.l, this.w);
