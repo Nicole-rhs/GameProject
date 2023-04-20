@@ -1,3 +1,10 @@
+body {
+    background-image: url("https://cdn.pixabay.com/photo/2017/09/14/22/42/milky-way-2750627_1280.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
 /*index.html*/
 #name{
     position: absolute;
@@ -6,6 +13,7 @@
     height: 10%;
     width: 50%;
     text-align: center;
+    color:rgb(178, 222, 241);
     font-family: 'Tillana', cursive;
 }
 #goal{
@@ -15,6 +23,7 @@
     height: 3%;
     width: 40%;
     text-align: center;
+    color:rgb(178, 222, 241);
     font-family: 'Tillana', cursive;
 }
 #instructions{
@@ -25,6 +34,7 @@
     width: 30%;
     text-align: center;
     text-overflow: scroll;
+    color:rgb(178, 222, 241);
     font-family: 'Tillana', cursive;
 }
 #start{
@@ -35,6 +45,17 @@
     text-align: center;
     font-family: 'Tillana', cursive;
 }
+#story{
+    position: absolute;
+    top: 70%;
+    left: 25%;
+    height: 25%;
+    width: 50%;
+    text-align: center;
+    text-overflow: scroll;
+    color:rgb(178, 222, 241);
+    font-family: 'Tillana', cursive;
+}
 
 /*play.html*/
 #scoring {
@@ -42,6 +63,7 @@
     top: 5%;
     left: 90%;
     font-size: 25px;
+    color:rgb(178, 222, 241);
     font-family: 'Tillana', cursive;
 }
 #reminder{
@@ -49,6 +71,7 @@
     top: 3%;
     left: 3%;
     font-size: 15px;
+    color:rgb(178, 222, 241);
     font-family: 'Tillana', cursive;
 }
 #stop{
