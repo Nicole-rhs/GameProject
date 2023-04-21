@@ -1,22 +1,35 @@
 <html>
   <head> </head>
   <body>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.5.0/p5.min.js" integrity="sha512-WJXVjqeINVpi5XXJ2jn0BSCfp0y80IKrYh731gLRnkAS9TKc5KNt/OfLtu+fCueqdWniouJ1ubM+VI/hbo7POQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.5.0/addons/p5.sound.min.js" integrity="sha512-WzkwpdWEMAY/W8WvP9KS2/VI6zkgejR4/KTxTl4qHx0utqeyVE0JY+S1DlMuxDChC7x0oXtk/ESji6a0lP/Tdg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.5.0/p5.min.js"
+      integrity="sha512-WJXVjqeINVpi5XXJ2jn0BSCfp0y80IKrYh731gLRnkAS9TKc5KNt/OfLtu+fCueqdWniouJ1ubM+VI/hbo7POQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.5.0/addons/p5.sound.min.js"
+      integrity="sha512-WzkwpdWEMAY/W8WvP9KS2/VI6zkgejR4/KTxTl4qHx0utqeyVE0JY+S1DlMuxDChC7x0oXtk/ESji6a0lP/Tdg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <script defer src="https://unpkg.com/p5.collide2d"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Tillana&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tillana&display=swap"
+      rel="stylesheet"
+    />
     <script src="script.js"></script>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="style.css" />
 
     <span id="scoring">0</span>
     <div id="reminder">
-        Reminders
-        <br>
-        Press p to pause/unpause
-        <br>
-        Move using arrow keys
+      Reminders
+      <br />
+      Press p to pause/unpause
+      <br />
+      Move using arrow keys
     </div>
 
     <div id="end">
@@ -41,7 +54,7 @@
 
       //Images
       let main;
-      
+
       let first;
       let second;
       let third;
@@ -67,7 +80,6 @@
       let getB = false;
       let getC = false;
 
-
       //Declare objects/variables
       var player = new player();
 
@@ -83,7 +95,7 @@
       var pointB = new pointB();
       var pointC = new pointC();
 
-      function preload(){
+      function preload() {
         main = loadImage("game-images/astronaut.png");
 
         first = loadImage("game-images/asteroid-dark.png");
@@ -147,7 +159,7 @@
         image(one, pointA.x, pointA.y, 16, 26);
         image(two, pointB.x, pointB.y, 16, 26);
         image(three, pointC.x, pointC.y, 16, 26);
-        
+
         //Contact between player and blocks
         touchA = collideRectRect(player.x, player.y, 40, 70, blockA.x, blockA.y, blockA.l, blockA.w);
         touchB = collideRectRect(player.x, player.y, 40, 70, blockB.x, blockB.y, blockB.l, blockB.w);
@@ -189,7 +201,7 @@
         }
         if (touchF === true) {
           player.x = blockF.x;
-          player.y = blockF.y
+          player.y = blockF.y;
           touchF = false;
         }
         if (touchG === true) {
@@ -198,34 +210,34 @@
           touchG = false;
         }
 
-        if (getA === true){
-          a = score += 1
+        if (getA === true) {
+          a = score += 1;
           document.getElementById("scoring").innerHTML = a;
           document.getElementById("finalScore").innerHTML = "Score: " + a;
           getA = false;
         }
-        if (getB === true){
-          b = score += 2
+        if (getB === true) {
+          b = score += 2;
           document.getElementById("scoring").innerHTML = b;
           document.getElementById("finalScore").innerHTML = "Score: " + b;
           getB = false;
         }
-        if (getC === true){
-          c = score += 3
+        if (getC === true) {
+          c = score += 3;
           document.getElementById("scoring").innerHTML = c;
           document.getElementById("finalScore").innerHTML = "Score: " + c;
           getC = false;
         }
       }
 
-      function keyPressed(){
+      function keyPressed() {
         //To jump (up arrow)
-        if (keyCode === UP_ARROW){
+        if (keyCode === UP_ARROW) {
           player.up();
         }
         //To pause/unpause screen (p)
         if (keyCode === 80) {
-          if(isLooping()){
+          if (isLooping()) {
             document.getElementById("stop").style.display = "block";
             noLoop();
           } else {
