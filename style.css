@@ -39,15 +39,18 @@ body {
 }
 #start {
   position: absolute;
-  top: 60%;
+  top: 58%;
   left: 50%;
-  transform: translate(-50%, -60%);
+  transform: translate(-50%, -58%);
+  font-size: medium;
   text-align: center;
+  border-radius: 50%;
+  background-color: rgb(188, 230, 248);
   font-family: "Tillana", cursive;
 }
 #story {
   position: absolute;
-  top: 70%;
+  top: 63%;
   left: 25%;
   height: 25%;
   width: 50%;
@@ -96,5 +99,5 @@ body {
   text-align: center;
   font-family: "Tillana", cursive;
   z-index: 0;
-  background-color: rgba(211, 166, 233, 0.7);
+  background-color: rgba(211, 166, 233, 0.75);
 }
