@@ -86,7 +86,7 @@ body {
   text-align: center;
   font-family: "Tillana", cursive;
   z-index: 0;
-  background-color: rgba(211, 166, 233);
+  background-color: rgb(162, 199, 231);
 }
 #end {
   position: absolute;
@@ -99,5 +99,5 @@ body {
   text-align: center;
   font-family: "Tillana", cursive;
   z-index: 0;
-  background-color: rgba(211, 166, 233, 0.75);
+  background-color: rgba(142, 193, 240, 0.75);
 }
