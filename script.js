@@ -55,12 +55,13 @@ function player() {
   }
 }
 
+//Easy way to find player
 function finder(){
   this.x = w/2;
   this.y = 0;
 
   this.show = function () {
-    rect(this.x, this.y, 10, 30);
+    rect(this.x, this.y, 50, 50);
     rectMode(CENTER);
     this.x = player.x;
     this.y = player.y - 150;
@@ -236,7 +237,7 @@ function pointA() {
 }
 
 function pointB() {
-  this.x = w + 333;
+  this.x = 2*w + 333;
   this.y = 135;
 
   this.show = function () {
@@ -255,7 +256,7 @@ function pointB() {
 }
 
 function pointC() {
-  this.x = w + 555;
+  this.x = 4*w + 555;
   this.y = h/2 + 100;
 
   this.show = function () {
