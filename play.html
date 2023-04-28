@@ -54,6 +54,7 @@
 
       //Images
       let main;
+      let arrow;
 
       let first;
       let second;
@@ -82,6 +83,7 @@
 
       //Declare objects/variables
       var player = new player();
+      var finder = new finder();
 
       var blockA = new blockA();
       var blockB = new blockB();
@@ -97,6 +99,7 @@
 
       function preload() {
         main = loadImage("game-images/astronaut.png");
+        arrow = loadImage("game-images/arrow.png");
 
         first = loadImage("game-images/asteroid-dark.png");
         second = loadImage("game-images/asteroid-diamond.png");
@@ -142,11 +145,13 @@
 
         player.show();
         player.update();
+        finder.show();
 
         //To load images onto blocks
         imageMode(CENTER);
 
         image(main, player.x, player.y, 35, 65);
+        image(arrow, finder.x, finder.y, 50, 50);
 
         image(first, blockA.x, blockA.y, 200, 200);
         image(second, blockB.x, blockB.y, 90, 80);

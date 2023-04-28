@@ -12,9 +12,10 @@ function player() {
   this.velocity = 0;
 
   this.show = function () {
-    ellipse(this.x, this.y, 40, 70);
-    ellipseMode(CENTER);
-    fill(222, 0, 0);
+    rect(this.x, this.y, 40, 70);
+    rectMode(CENTER);
+    noStroke();
+    noFill();
   }
 
   this.up = function () {
@@ -54,6 +55,18 @@ function player() {
   }
 }
 
+function finder(){
+  this.x = w/2;
+  this.y = 0;
+
+  this.show = function () {
+    rect(this.x, this.y, 10, 30);
+    rectMode(CENTER);
+    this.x = player.x;
+    this.y = player.y - 150;
+  }
+}
+
 //Obstacles * 7
 function blockA() {
   this.x = w + 20;
@@ -64,7 +77,8 @@ function blockA() {
   this.show = function () {
     rect(this.x, this.y, this.l, this.w);
     rectMode(CENTER);
-    fill(222, 0, 0);
+    noStroke();
+    noFill();
     //Movement speed
     this.x = this.x -= 5.5;
     //To get a new, random location
@@ -84,7 +98,8 @@ function blockB() {
   this.show = function () {
     rect(this.x, this.y, this.l, this.w);
     rectMode(CENTER);
-    fill(222, 0, 0);
+    noStroke();
+    noFill();
     //Movement speed
     this.x = this.x -= 5.3;
     //To get a new, random location
@@ -104,7 +119,8 @@ function blockC() {
   this.show = function () {
     rect(this.x, this.y, this.l, this.w);
     rectMode(CENTER);
-    fill(222, 0, 0);
+    noStroke();
+    noFill();
     //Movement speed
     this.x = this.x -= 5.7;
     //To get a new, random location
@@ -124,7 +140,8 @@ function blockD() {
   this.show = function () {
     rect(this.x, this.y, this.l, this.w);
     rectMode(CENTER);
-    fill(222, 0, 0);
+    noStroke();
+    noFill();
     //Movement speed
     this.x = this.x -= 6;
     //To get a new, random location
@@ -144,7 +161,8 @@ function blockE() {
   this.show = function () {
     rect(this.x, this.y, this.l, this.w);
     rectMode(CENTER);
-    fill(222, 0, 0);
+    noStroke();
+    noFill();
     //Movement speed
     this.x = this.x -= 5;
     //To get a new, random location
@@ -164,7 +182,8 @@ function blockF() {
   this.show = function () {
     rect(this.x, this.y, this.l, this.w);
     rectMode(CENTER);
-    fill(222, 0, 0);
+    noStroke();
+    noFill();
     //Movement speed
     this.x = this.x -= 6.3;
     //To get a new, random location
@@ -184,7 +203,8 @@ function blockG() {
   this.show = function () {
     rect(this.x, this.y, this.l, this.w);
     rectMode(CENTER);
-    fill(0, 0, 222);
+    noStroke();
+    noFill();
     //Movement speed
     this.x = this.x -= 6.5;
     //To get a new, random location
@@ -203,7 +223,8 @@ function pointA() {
   this.show = function () {
     rect(this.x, this.y, 10, 10);
     rectMode(CENTER);
-    fill(0, 0, 222);
+    noStroke();
+    noFill();
     //Movement speed
     this.x = this.x -= 3.3;
     //To get new, random location
@@ -221,7 +242,8 @@ function pointB() {
   this.show = function () {
     rect(this.x, this.y, 10, 10);
     rectMode(CENTER);
-    fill(0, 0, 222);
+    noStroke();
+    noFill();
     //Movement speed
     this.x = this.x -= 3.5;
     //To get new, random location
@@ -239,7 +261,8 @@ function pointC() {
   this.show = function () {
     rect(this.x, this.y, 10, 10);
     rectMode(CENTER);
-    fill(0, 222, 0);
+    noStroke();
+    noFill();
     //Movement speed
     this.x = this.x -= 3.5;
     //To get new, random location
